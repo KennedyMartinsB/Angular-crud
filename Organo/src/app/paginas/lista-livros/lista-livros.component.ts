@@ -32,13 +32,7 @@ export class ListaLivrosComponent implements OnInit {
 
   }
 
-  generos: GeneroLiterario[] = [
-    { id: 'romance', value: 'Romance' },
-    { id: 'misterio', value: 'Mistério' },
-    { id: 'fantasia', value: 'Fantasia' },
-    { id: 'ficcao-cientifica', value: 'Ficção Científica' },
-    { id: 'tecnicos', value: 'Técnicos' }
-  ];
+
 
   // Comentar este array depois
   // livros: Livro[] = [
@@ -251,9 +245,9 @@ export class ListaLivrosComponent implements OnInit {
   }
 
   organizarLivrosPorGenero() {
-    this.generosComLivros = this.generos.map((genero) => ({
-      genero,
-      livros: this.livros.filter((livro) => livro.genero.id === genero.id)
-    }));
+    // this.generosComLivros = this.generos.map((genero) => ({
+    //   genero,
+    //   livros: this.livros.filter((livro) => livro.genero.id === genero.id)
+    // }));
   }
 }
