@@ -10,6 +10,7 @@ import { BotaoComponent } from '../botao/botao.component';
 import { DivisorComponent } from '../divisor/divisor.component';
 import { TituloComponent } from '../titulo/titulo.component';
 import { SubtituloComponent } from '../subtitulo/subtitulo.component';
+import { LivroService } from '../../services/livro.service';
 
 @Component({
   selector: 'app-formulario',
@@ -29,20 +30,15 @@ import { SubtituloComponent } from '../subtitulo/subtitulo.component';
 })
 export class FormularioComponent implements OnInit {
   livroFormulario!: FormGroup;
-  generos: GeneroLiterario[] = [
-    { id: 'romance', value: 'Romance' },
-    { id: 'misterio', value: 'Mistério' },
-    { id: 'fantasia', value: 'Fantasia' },
-    { id: 'ficcao-cientifica', value: 'Ficção Científica' },
-    { id: 'tecnicos', value: 'Técnicos' }
-];
 
-  constructor(
-    private formBuilder: FormBuilder,
-  ) { }
+  // Inicializando array que vai receber os generos
+  generos: GeneroLiterario[] = [];
+
+  constructor(private formBuilder: FormBuilder, private livrosService: LivroService) { }
 
   ngOnInit() {
     this.inicializarlivroFormulario();
+    this.generos = this.livrosService.generos
   }
 
   inicializarlivroFormulario() {

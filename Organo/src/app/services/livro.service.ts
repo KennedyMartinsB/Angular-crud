@@ -53,6 +53,7 @@ export class LivroService {
             livrosPorGenero.get(generoId)?.push(livro)
           }
         })
+        console.log(livrosPorGenero)
         return livrosPorGenero
       })
     )
