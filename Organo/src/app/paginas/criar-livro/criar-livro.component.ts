@@ -19,7 +19,7 @@ export class CriarLivroComponent {
   // Realizar a ação de subscribe
   criarLivro(novoLivro: Livro){
     this.livrosService.adicionarLivro(novoLivro).subscribe(() => {
-      // redirecionamento
+      // redirecionamento para o component/page de listagem de livros
       this.router.navigate(['lista-livros'])
     })
   }
