@@ -58,4 +58,11 @@ export class LivroService {
       })
     )
   }
+
+  adicionarLivro(novoLivro: Livro): Observable<Livro>{
+    // Metodo post do HttpCliente serve para realizar inserções
+    // No caso será inserido um objeto do tipo livro que foi tipado pelo <> ao lado do post
+    // No metodo post passamos a url e o objeto
+    return this.httpClient.post<Livro>(this.API_URL, novoLivro)
+  }
 }

@@ -34,6 +34,9 @@ export class FormularioComponent implements OnInit {
   // Inicializando array que vai receber os generos
   generos: GeneroLiterario[] = [];
 
+
+  // Dentro do constructor estamos injetando o formbuilder para construir o formulário
+  // livrosService se refere ao service onde popularemos o dropdown e  buscar o generos
   constructor(private formBuilder: FormBuilder, private livrosService: LivroService) { }
 
   ngOnInit() {
