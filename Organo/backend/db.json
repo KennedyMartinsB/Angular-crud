@@ -186,6 +186,17 @@
         "value": "Romance"
       },
       "favorito": false
+    },
+    {
+      "id": "x9ZP64X",
+      "titulo": "Mulher o caminho para a pobreza e a desgraça",
+      "autoria": "Raiam Santos",
+      "favorito": false,
+      "genero": {
+        "id": "romance",
+        "value": "Romance"
+      },
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRQYUcYYxJ7O2_ORt4iYW3QQBJMzLGZJNeZw&s"
     }
   ]
 }
