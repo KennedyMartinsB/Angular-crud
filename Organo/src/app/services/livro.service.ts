@@ -65,4 +65,9 @@ export class LivroService {
     // No metodo post passamos a url e o objeto
     return this.httpClient.post<Livro>(this.API_URL, novoLivro)
   }
+
+  atualizarFavorito(livro: Livro): Observable<Livro> {
+    // Utilizaremo o metodo patch para atualização pois ela é em somente um campo
+    return this.httpClient.patch<Livro>(`${this.API_URL}/${livro.id}`, {favorito: livro.favorito})
+  }
 }
