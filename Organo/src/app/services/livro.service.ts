@@ -53,7 +53,7 @@ export class LivroService {
             livrosPorGenero.get(generoId)?.push(livro)
           }
         })
-        console.log(livrosPorGenero)
+        // console.log(livrosPorGenero)
         return livrosPorGenero
       })
     )
@@ -69,5 +69,9 @@ export class LivroService {
   atualizarFavorito(livro: Livro): Observable<Livro> {
     // Utilizaremo o metodo patch para atualização pois ela é em somente um campo
     return this.httpClient.patch<Livro>(`${this.API_URL}/${livro.id}`, {favorito: livro.favorito})
+  }
+
+  obterLivroPorId(id: string): Observable<Livro> {
+    return this.httpClient.get<Livro>(`${this.API_URL}/${id}`)
   }
 }
