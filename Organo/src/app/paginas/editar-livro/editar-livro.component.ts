@@ -9,7 +9,6 @@ import { Livro } from '../../componentes/livro/livro';
   styleUrl: './editar-livro.component.css'
 })
 export class EditarLivroComponent {
-  livro!: Livro | null;
-
+  livro!: Livro;
 
 }
