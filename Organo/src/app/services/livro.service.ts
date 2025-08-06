@@ -74,4 +74,8 @@ export class LivroService {
   obterLivroPorId(id: string): Observable<Livro> {
     return this.httpClient.get<Livro>(`${this.API_URL}/${id}`)
   }
+
+  editarLivro(livro: Livro): Observable<Livro> {
+    return this.httpClient.put<Livro>(`${this.API_URL}/${livro.id}`, livro)
+  }
 }
