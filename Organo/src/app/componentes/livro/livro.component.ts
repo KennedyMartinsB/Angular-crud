@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 import { Livro } from './livro';
 import { BotaoComponent } from '../botao/botao.component';
@@ -15,7 +15,7 @@ import { LivroService } from '../../services/livro.service';
   styleUrl: './livro.component.css'
 })
 export class LivroComponent {
-
+  excluirLivro = output<string>();
   livro = input.required<Livro>();
 
   constructor(private livroService: LivroService){
@@ -30,4 +30,7 @@ export class LivroComponent {
     })
   }
 
+  excluir() {
+    this.excluirLivro.emit(this.livro().id)
+  }
 }

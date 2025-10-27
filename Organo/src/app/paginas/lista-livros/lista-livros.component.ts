@@ -42,5 +42,18 @@ export class ListaLivrosComponent implements OnInit {
     })
   }
 
+  // Após a deleção o item é excluido porem continua sendo listado na tela
+  removerLivro(id: string){
+    this.livrosService.excluirLivro(id).subscribe(() => {
+      this.deletarLivroDaLista(id);
+    });
+  }
+
+  deletarLivroDaLista(livroId: string){
+    this.generosComLivros = this.generosComLivros.map(({ genero, livros }) => ({
+      genero,
+      livros: livros.filter(livro => livro.id !== livroId)
+    }))
+  }
 
 }
